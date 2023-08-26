@@ -48,7 +48,6 @@ player_container.forEach((container) => {
     counter += 1;
     if (counter >= 10) {
       console.log("Teams are selected.");
-
       if (blue_team.length === 5 && red_team.length === 5) {
         timer.style.display = "none";
         hero_section.style.marginTop = "70px";
@@ -65,3 +64,15 @@ player_container.forEach((container) => {
 
 let prvi_pick = Math.floor(Math.random() * 2 + 1);
 console.log(prvi_pick);
+
+// audio
+player_container.forEach((container) => {
+  const audio = container.querySelector(".player-hover");
+  container.addEventListener("mouseenter", () => {
+    audio.currentTime = 0;
+    audio.play();
+  });
+  container.addEventListener("mouseleave", () => {
+    audio.pause();
+  });
+});
