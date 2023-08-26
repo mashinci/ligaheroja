@@ -22,9 +22,12 @@ const timer = document.querySelector(".timer");
 // prikaz igraca na dugme
 hero_btn.addEventListener("click", function () {
   hero_btn.style.display = "none";
+  // players appear
   all_players.style.display = "flex";
   all_players.style.flexDirection = "row";
   all_players.style.gap = "10px";
+  // timer appear
+  timer.style.display = "block";
 });
 let blue_team = new Array();
 let red_team = new Array();
@@ -50,12 +53,11 @@ player_container.forEach((container) => {
       console.log("Teams are selected.");
       if (blue_team.length === 5 && red_team.length === 5) {
         timer.style.display = "none";
-        hero_section.style.marginTop = "70px";
+        hero_section.style.marginTop = "40px";
         const draft_done_btn = document.createElement("button");
         draft_done_btn.id = "submit-button-draft";
         draft_done_btn.textContent = "choose your heroes";
         document.body.appendChild(draft_done_btn);
-
         draft_done_btn.addEventListener("click", () => {});
       }
     }
