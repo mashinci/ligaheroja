@@ -58,7 +58,9 @@ player_container.forEach((container) => {
         draft_done_btn.id = "submit-button-draft";
         draft_done_btn.textContent = "choose your heroes";
         document.body.appendChild(draft_done_btn);
-        draft_done_btn.addEventListener("click", () => {});
+        draft_done_btn.addEventListener("click", () => {
+          window.location.href = "/champSelect";
+        });
       }
     }
   });

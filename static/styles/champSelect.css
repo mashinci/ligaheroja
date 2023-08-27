@@ -1,0 +1,45 @@
+/* boje */
+:root {
+  --bela: #ffffff;
+  --crna: #000000;
+  --plava: #0093e9;
+  --crvena: #d33445;
+  --borda: #553f46;
+  --zuta: #d4c381;
+  ::selection {
+    color: var(--bela);
+    background-color: var(--crna);
+  }
+}
+/* fontovi */
+@font-face {
+  font-family: friz;
+  src: url(../fonts/frizMedium.otf);
+}
+@font-face {
+  font-family: frizBold;
+  src: url(../fonts/frizBold.otf);
+}
+@font-face {
+  font-family: frizBoldItalic;
+  src: url(../fonts/frizBoldItalic.otf);
+}
+@font-face {
+  font-family: frizItalic;
+  src: url(../fonts/frizItalic.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: friz, serif;
+  background-image: url(../img/champSelectBg2.png);
+  background-size: cover;
+  height: 100vh;
+}
+.logo-container {
+  text-align: center;
+  padding: 20px;
+}
