@@ -59,7 +59,32 @@ player_container.forEach((container) => {
         draft_done_btn.textContent = "choose your heroes";
         document.body.appendChild(draft_done_btn);
         draft_done_btn.addEventListener("click", () => {
-          window.location.href = "/champSelect";
+          const draft_data = {
+            blue_team: [...blue_team],
+            red_team: [...red_team],
+          };
+          fetch("/submitDraftSelect", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(draft_data),
+          })
+            .then((response) => {
+              console.log(`Response je ${response}`);
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+              console.log(`Blue team igraci su ${data.blue_team}`);
+              console.log(`Red team igraci su ${data.red_team}`);
+              console.log(`Moj test ${data.testKurcina}`);
+            })
+            .catch((error) => {
+              console.log(`Error ${error}`);
+            });
+          // window.location.target = "_blank";
+          // window.location.href = "/champSelect";
         });
       }
     }
@@ -70,13 +95,13 @@ let prvi_pick = Math.floor(Math.random() * 2 + 1);
 console.log(prvi_pick);
 
 // audio
-player_container.forEach((container) => {
-  const audio = container.querySelector(".player-hover");
-  container.addEventListener("mouseenter", () => {
-    audio.currentTime = 0;
-    audio.play();
-  });
-  container.addEventListener("mouseleave", () => {
-    audio.pause();
-  });
-});
+// player_container.forEach((container) => {
+//   const audio = container.querySelector(".player-hover");
+//   container.addEventListener("mouseenter", () => {
+//     audio.currentTime = 0;
+//     audio.play();
+//   });
+//   container.addEventListener("mouseleave", () => {
+//     audio.pause();
+//   });
+// });
