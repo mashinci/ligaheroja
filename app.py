@@ -9,9 +9,9 @@ def home():
 
 @app.route("/submitDraftSelect", methods=['POST'])
 def draft_submit():
-    data = request.json
-    blue_team = data.get('blue_team', [])
-    red_team = data.get('red_team', [])
+    draft_data = request.json
+    blue_team = draft_data.get('blue_team', [])
+    red_team = draft_data.get('red_team', [])
     
     response_data = {
         'message': 'Data received successfully',

@@ -74,11 +74,11 @@ player_container.forEach((container) => {
               console.log(`Response je ${response}`);
               return response.json();
             })
-            .then((data) => {
-              console.log(data);
-              console.log(`Blue team igraci su ${data.blue_team}`);
-              console.log(`Red team igraci su ${data.red_team}`);
-              console.log(`Moj test ${data.testKurcina}`);
+            .then((response_data) => {
+              console.log(typeof response_data);
+              console.log(`Blue team igraci su ${response_data.blue_team}`);
+              console.log(`Red team igraci su ${response_data.red_team}`);
+              console.log(`Moj test ${response_data.testKurcina}`);
             })
             .catch((error) => {
               console.log(`Error ${error}`);
