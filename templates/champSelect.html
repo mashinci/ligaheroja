@@ -20,17 +20,18 @@
       <!-- TEMPLATE START HEROES -->
       <form class="form-draft" action="#" method="get">
         <div class="drafted-player-heroes">
+          <!-- COST 3 - 4 -->
           <div class="three-four-coins">
             <div class="pay-to-take-heroes">
               <div class="drafted-heroes-img-container">
                 <label for="zed"
-                  ><img src="../static/img/vladimir.png" alt=""
+                  ><img src="../static/img/zed.png" alt=""
                 /></label>
-                <input type="radio" name="three-four-cost" id="zed" />
+                <input type="radio" name="player-pay-radio" id="zed" />
                 <label for="renataGlasc"
-                  ><img src="../static/img/vladimir.png" alt=""
+                  ><img src="../static/img/renataGlasc.png" alt=""
                 /></label>
-                <input type="radio" name="three-four-cost" id="renataGlasc" />
+                <input type="radio" name="player-pay-radio" id="renataGlasc" />
               </div>
               <div class="heroes-cost">
                 <img src="../static/img/coin.png" alt="" />
@@ -39,8 +40,14 @@
             </div>
             <div class="pay-to-take-heroes">
               <div class="drafted-heroes-img-container">
-                <img src="../static/img/vladimir.png" alt="" />
-                <img src="../static/img/vladimir.png" alt="" />
+                <label for="zoe"
+                  ><img src="../static/img/zoe.png" alt=""
+                /></label>
+                <input type="radio" name="player-pay-radio" id="zoe" />
+                <label for="zilean"
+                  ><img src="../static/img/zilean.png" alt=""
+                /></label>
+                <input type="radio" name="player-pay-radio" id="zilean" />
               </div>
               <div class="heroes-cost">
                 <img src="../static/img/coin.png" alt="" />
@@ -48,17 +55,18 @@
               </div>
             </div>
           </div>
+          <!-- COST 5 -->
           <div class="five-coins">
             <div class="pay-to-take-heroes">
               <div class="drafted-heroes-img-container">
                 <label for="twistedFate"
                   ><img src="../static/img/twistedFate.png" alt=""
                 /></label>
-                <input type="radio" name="five-cost" id="twistedFate" />
+                <input type="radio" name="player-pay-radio" id="twistedFate" />
                 <label for="tahmKench"
                   ><img src="../static/img/tahmKench.png" alt=""
                 /></label>
-                <input type="radio" name="five-cost" id="tahmKench" />
+                <input type="radio" name="player-pay-radio" id="tahmKench" />
               </div>
               <div class="heroes-cost">
                 <img src="../static/img/coin.png" alt="" />
@@ -66,25 +74,38 @@
               </div>
             </div>
           </div>
+          <!-- COST 1 OR 2 -->
           <div class="one-two-coins">
             <div class="pay-to-take-heroes">
               <div class="drafted-heroes-img-container">
-                <img src="../static/img/vladimir.png" alt="" />
-                <img src="../static/img/vladimir.png" alt="" />
-              </div>
-              <div class="heroes-cost">
-                <img src="../static/img/coin.png" alt="" />
-                <h3 id="hero-coin">1</h3>
-              </div>
-            </div>
-            <div class="pay-to-take-heroes">
-              <div class="drafted-heroes-img-container">
-                <img src="../static/img/vladimir.png" alt="" />
-                <img src="../static/img/vladimir.png" alt="" />
+                <label for="riven"
+                  ><img src="../static/img/riven.png" alt=""
+                /></label>
+                <input type="radio" name="player-pay-radio" id="riven" />
+                <label for="blitzCrank"
+                  ><img src="../static/img/blitzCrank.png" alt=""
+                /></label>
+                <input type="radio" name="player-pay-radio" id="blitzCrank" />
               </div>
               <div class="heroes-cost">
                 <img src="../static/img/coin.png" alt="" />
                 <h3 id="hero-coin">2</h3>
+              </div>
+            </div>
+            <div class="pay-to-take-heroes">
+              <div class="drafted-heroes-img-container">
+                <label for="akali"
+                  ><img src="../static/img/akali.png" alt=""
+                /></label>
+                <input type="radio" name="player-pay-radio" id="akali" />
+                <label for="senna"
+                  ><img src="../static/img/senna.png" alt=""
+                /></label>
+                <input type="radio" name="player-pay-radio" id="senna" />
+              </div>
+              <div class="heroes-cost">
+                <img src="../static/img/coin.png" alt="" />
+                <h3 id="hero-coin">1</h3>
               </div>
             </div>
           </div>
@@ -92,30 +113,46 @@
       </form>
       <!-- TEMPLATE END HEROES -->
       <div class="drafted-blue-team">
-        <div class="team-points">15</div>
+        <div id="blue-team-points" class="team-points">15</div>
         <div class="drafted-player-container">
           <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
         </div>
         <div class="drafted-player-container">
-          <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
+          <img
+            class="drafted-player-img"
+            src="../static/img/player.png"
+            alt=""
+          />
         </div>
         <div class="drafted-player-container">
-          <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
+          <img
+            class="drafted-player-img"
+            src="../static/img/player.png"
+            alt=""
+          />
         </div>
         <div class="drafted-player-container">
-          <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
+          <img
+            class="drafted-player-img"
+            src="../static/img/player.png"
+            alt=""
+          />
         </div>
         <div class="drafted-player-container">
-          <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
+          <img
+            class="drafted-player-img"
+            src="../static/img/player.png"
+            alt=""
+          />
         </div>
       </div>
       <div class="drafted-red-team">
-        <div class="team-points">15</div>
-        <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
-        <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
-        <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
-        <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
-        <img class="drafted-player-img" src="../static/img/mein.png" alt="" />
+        <div id="red-team-points" class="team-points">15</div>
+        <img class="drafted-player-img" src="../static/img/player.png" alt="" />
+        <img class="drafted-player-img" src="../static/img/player.png" alt="" />
+        <img class="drafted-player-img" src="../static/img/player.png" alt="" />
+        <img class="drafted-player-img" src="../static/img/player.png" alt="" />
+        <img class="drafted-player-img" src="../static/img/player.png" alt="" />
       </div>
     </div>
     <script src="../static/js/champSelect.js"></script>

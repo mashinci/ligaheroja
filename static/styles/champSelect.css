@@ -67,12 +67,14 @@ body {
 }
 .drafted-player-img {
   border-radius: 50%;
+  cursor: pointer;
 }
 /* form */
 .form-draft {
   position: absolute;
 }
-.team-points {
+#blue-team-points,
+#red-team-points {
   font-size: 48px;
   text-align: center;
   font-family: "Nothing You Could Do";
