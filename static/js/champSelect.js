@@ -1,10 +1,22 @@
 "use strict";
-const player_img = document.querySelector(".drafted-player-img");
 const drafted_player_heroes = document.querySelector(".drafted-player-heroes");
-player_img.addEventListener("mouseover", function () {
-  drafted_player_heroes.style.opacity = 1;
+const drafted_player_container = document.querySelectorAll(
+  ".drafted-player-container"
+);
+const radio_twisted_fate = document.querySelector("#twistedFate");
+drafted_player_container.forEach((container) => {
+  const player_img = container.querySelector(".drafted-player-img");
+  player_img.addEventListener("click", function () {
+    drafted_player_heroes.style.opacity = 1;
+  });
 });
-
-// player_img.addEventListener("mouseout", function () {
-//   drafted_player_heroes.style.opacity = 0;
-// });
+let brojPoena = 15;
+console.log(brojPoena);
+radio_twisted_fate.addEventListener("change", function () {
+  if (radio_twisted_fate.checked) {
+    brojPoena -= 5;
+    drafted_player_heroes.style.opacity = 0;
+    console.log("Posle izbora");
+    console.log(brojPoena);
+  }
+});
