@@ -29,10 +29,11 @@ hero_btn.addEventListener("click", function () {
   // timer appear
   timer.style.display = "block";
 });
+
 let blue_team = new Array();
 let red_team = new Array();
-
 let counter = 0;
+
 player_container.forEach((container) => {
   const player_img = container.querySelector(".player-img");
   player_img.addEventListener("click", () => {
@@ -63,28 +64,44 @@ player_container.forEach((container) => {
             blue_team: [...blue_team],
             red_team: [...red_team],
           };
-          fetch("/submitDraftSelect", {
-            method: "POST",
-            headers: {
-              "Content-type": "application/json",
-            },
-            body: JSON.stringify(draft_data),
-          })
-            .then((response) => {
-              console.log(`Response je ${response}`);
-              return response.json();
-            })
-            .then((response_data) => {
-              console.log(typeof response_data);
-              console.log(`Blue team igraci su ${response_data.blue_team}`);
-              console.log(`Red team igraci su ${response_data.red_team}`);
-              console.log(`Moj test ${response_data.testKurcina}`);
-            })
-            .catch((error) => {
-              console.log(`Error ${error}`);
+
+          async function sendHeroes() {
+            const res = await fetch("/submitDraftSelect", {
+              method: "POST",
+              headers: {
+                "Content-type": "application/json",
+              },
+              body: JSON.stringify(draft_data),
             });
-          // window.location.target = "_blank";
-          // window.location.href = "/champSelect";
+            const response_data = await res.json();
+            console.log(typeof response_data);
+            console.log(`Blue team igraci su ${response_data.blue_team}`);
+            console.log(`Red team igraci su ${response_data.red_team}`);
+            console.log(`Moj test ${response_data.testKurcina}`);
+          }
+          sendHeroes();
+          // fetch("/submitDraftSelect", {
+          //   method: "POST",
+          //   headers: {
+          //     "Content-type": "application/json",
+          //   },
+          //   body: JSON.stringify(draft_data),
+          // })
+          //   .then((response) => {
+          //     console.log(`Response je ${response}`);
+          //     return response.json();
+          //   })
+          //   .then((response_data) => {
+          //     console.log(typeof response_data);
+          //     console.log(`Blue team igraci su ${response_data.blue_team}`);
+          //     console.log(`Red team igraci su ${response_data.red_team}`);
+          //     console.log(`Moj test ${response_data.testKurcina}`);
+          //   })
+          //   .catch((error) => {
+          //     console.log(`Error ${error}`);
+          //   });
+          // // window.location.target = "_blank";
+          // // window.location.href = "/champSelect";
         });
       }
     }
