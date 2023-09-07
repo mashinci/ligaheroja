@@ -74,10 +74,10 @@ player_container.forEach((container) => {
               body: JSON.stringify(draft_data),
             });
             const response_data = await res.json();
-            console.log(typeof response_data);
-            console.log(`Blue team igraci su ${response_data.blue_team}`);
-            console.log(`Red team igraci su ${response_data.red_team}`);
-            console.log(`Moj test ${response_data.testKurcina}`);
+            console.log(`Blue team igraci i heroji su ${response_data.blue_team}`);
+            console.log(`Red team igraci i heroji su ${response_data.red_team}`);
+            //console.log(`Blue team igraci i heroji su ${response_data.blue_team.lio[5]}`);
+            //console.log(`Red team igraci i heroji su ${response_data.red_team.kole[5]}`);
           }
           sendHeroes();
           // fetch("/submitDraftSelect", {
