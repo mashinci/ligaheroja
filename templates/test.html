@@ -3,21 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/champSelect.css" />
     <title>TEST</title>
   </head>
   <body>
-    {{ 1+1 }} {% for blue_player in blue_team_players %}
-    <ul class="blue_player">
-      <!-- <img src="../static/img/{{ blue_player }}" alt="" /> -->
-      <li>
-        {{ blue_player }} {% for cost,champs in blue_team[blue_player].items()
-        %}
-        <ul>
-          <li>{{ cost }} - {{ champs }}</li>
-        </ul>
-        {% endfor %}
-      </li>
-    </ul>
-    {% endfor %}
+    <div class="logo-container">
+      <img src="../static/img/logo.png" alt="" />
+      <!-- <a href="/"><h1>Draft Page</h1></a> -->
+    </div>
+    <div class="drafted-players-container">
+      <div class="drafted-blue-team">
+        <div id="blue-team-points" class="team-points">15</div>
+        <div class="drafted-players">
+          {% for blue_player in blue_team_players %}
+          <div class="drafted-player-container">
+            <button
+              onclick="show_champs('{{ blue_player }}')"
+              class="player-btn"
+            >
+              <img
+                class="drafted-player-img"
+                src="../static/img/{{ blue_player }}.png"
+                alt=""
+              />
+            </button>
+            <div id="{{ blue_player }}" class="list">
+              {% for cost,champs in blue_team[blue_player].items() %}
+              <div class="coin-cost-champs">
+                {% for champ in champs %}
+                <label for="{{ champ }}"
+                  ><img
+                    class="hero-img"
+                    src="../static/img/{{ champ }}.png"
+                    alt=""
+                /></label>
+                <input
+                  type="radio"
+                  name="player-pay-radio"
+                  id="{{ champ }}"
+                  class="radio-hero-group"
+                />
+
+                {% endfor %}
+                <div class="coin-cost">
+                  <h5>{{ cost }}</h5>
+                  <img src="../static/img/coin.png" alt="" />
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="drafted-red-team">
+        <div id="red-team-points" class="team-points">15</div>
+        <div class="drafted-players">
+          {% for red_player in red_team_players %}
+          <div class="drafted-player-container" id="{{ red_player }}">
+            <img
+              class="drafted-player-img"
+              src="../static/img/{{ red_player }}.png"
+              alt=""
+            />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/test.js"></script>
   </body>
 </html>

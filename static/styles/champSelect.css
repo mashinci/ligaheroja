@@ -46,18 +46,24 @@ body {
 .drafted-players-container {
   min-height: 80vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 150px;
+  gap: 410px;
 }
 .drafted-blue-team,
 .drafted-red-team {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  padding: 50px;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  padding: 15px;
   border-radius: 20px;
+}
+.drafted-players {
+  gap: 300px;
+  display: flex;
+  flex-direction: row;
 }
 .drafted-red-team {
   background-color: var(--crvena);
@@ -75,10 +81,10 @@ body {
 }
 #blue-team-points,
 #red-team-points {
+  font-family: friz, serif;
   font-size: 48px;
   text-align: center;
-  font-family: "Nothing You Could Do";
-  margin-bottom: 20px;
+  margin-right: 20px;
 }
 .drafted-player-heroes {
   display: flex;
@@ -119,11 +125,34 @@ body {
 }
 /* radio buttons */
 input[type="radio"] {
-  display: none;
+  /* display: none; */
 }
+
 /* hero img */
 .hero-img {
   cursor: pointer;
   filter: grayscale();
   opacity: 0.8;
+}
+.drafted-player-container {
+  position: relative;
+}
+.player-btn {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+.list {
+  display: none;
+}
+.coin-cost-champs {
+  border: 2px solid white;
+}
+.coin-cost {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.coin-cost h5 {
+  font-size: 36px;
 }

@@ -77,7 +77,7 @@ player_container.forEach((container) => {
             const response_data = await res.json();
           }
           sendHeroes();
-          window.location.href = "/champSelect";
+          window.location.href = "/test";
         });
       }
     }
