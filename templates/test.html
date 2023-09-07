@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST</title>
+  </head>
+  <body>
+    {{ 1+1 }} {% for blue_player in blue_team_players %}
+    <ul class="blue_player">
+      <!-- <img src="../static/img/{{ blue_player }}" alt="" /> -->
+      <li>
+        {{ blue_player }} {% for cost,champs in blue_team[blue_player].items()
+        %}
+        <ul>
+          <li>{{ cost }} - {{ champs }}</li>
+        </ul>
+        {% endfor %}
+      </li>
+    </ul>
+    {% endfor %}
+  </body>
+</html>

@@ -32,6 +32,17 @@ def champ_select():
     print("\n\n\n\nMoja kara velika\n\n\n\n\n", team_heroes)
     return render_template('champSelect.html')
 
+@app.route("/test")
+def test():
+    global team_heroes
+    blue_team = team_heroes['blue_team']
+    red_team = team_heroes['red_team']
+
+    blue_team_players = list(blue_team.keys())
+    red_team_players = list(red_team.keys()) 
+
+    return render_template('test.html',blue_team_players = blue_team_players, red_team_players = red_team_players, blue_team = blue_team, red_team = red_team)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
