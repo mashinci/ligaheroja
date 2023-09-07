@@ -49,22 +49,23 @@ player_container.forEach((container) => {
     });
     // kada je slika u kontejneru, ne moze da se klikne
     player_img.style.pointerEvents = "none";
+
     counter += 1;
+
     if (counter >= 10) {
-      console.log("Teams are selected.");
       if (blue_team.length === 5 && red_team.length === 5) {
-        timer.style.display = "none";
-        hero_section.style.marginTop = "40px";
+        // New Button to take user to hero selection page
         const draft_done_btn = document.createElement("button");
         draft_done_btn.id = "submit-button-draft";
         draft_done_btn.textContent = "choose your heroes";
         document.body.appendChild(draft_done_btn);
+
+        // On Button Click - Creating Object that contains teams that will be passed to backend
         draft_done_btn.addEventListener("click", () => {
           const draft_data = {
             blue_team: [...blue_team],
             red_team: [...red_team],
           };
-
           async function sendHeroes() {
             const res = await fetch("/submitDraftSelect", {
               method: "POST",
@@ -74,43 +75,14 @@ player_container.forEach((container) => {
               body: JSON.stringify(draft_data),
             });
             const response_data = await res.json();
-            console.log(typeof response_data);
-            console.log(`Blue team igraci su ${response_data.blue_team}`);
-            console.log(`Red team igraci su ${response_data.red_team}`);
-            console.log(`Moj test ${response_data.testKurcina}`);
           }
           sendHeroes();
-          // fetch("/submitDraftSelect", {
-          //   method: "POST",
-          //   headers: {
-          //     "Content-type": "application/json",
-          //   },
-          //   body: JSON.stringify(draft_data),
-          // })
-          //   .then((response) => {
-          //     console.log(`Response je ${response}`);
-          //     return response.json();
-          //   })
-          //   .then((response_data) => {
-          //     console.log(typeof response_data);
-          //     console.log(`Blue team igraci su ${response_data.blue_team}`);
-          //     console.log(`Red team igraci su ${response_data.red_team}`);
-          //     console.log(`Moj test ${response_data.testKurcina}`);
-          //   })
-          //   .catch((error) => {
-          //     console.log(`Error ${error}`);
-          //   });
-          // // window.location.target = "_blank";
-          // // window.location.href = "/champSelect";
+          window.location.href = "/champSelect";
         });
       }
     }
   });
 });
-
-let prvi_pick = Math.floor(Math.random() * 2 + 1);
-console.log(prvi_pick);
-
 // audio
 // player_container.forEach((container) => {
 //   const audio = container.querySelector(".player-hover");
