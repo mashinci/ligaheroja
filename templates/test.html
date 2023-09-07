@@ -31,16 +31,16 @@
               {% for cost,champs in blue_team[blue_player].items() %}
               <div class="coin-cost-champs">
                 {% for champ in champs %}
-                <label for="{{ champ }}"
+                <label for="{{ blue_player }}-{{ champ }}"
                   ><img
                     class="hero-img"
                     src="../static/img/{{ champ }}.png"
-                    alt=""
+                    alt="../static/img/{{ champ }}.png"
                 /></label>
                 <input
                   type="radio"
-                  name="player-pay-radio"
-                  id="{{ champ }}"
+                  name="{{ blue_player }}-champs"
+                  id="{{ blue_player }}-{{ champ }}"
                   class="radio-hero-group"
                 />
 
@@ -61,12 +61,42 @@
         <div id="red-team-points" class="team-points">15</div>
         <div class="drafted-players">
           {% for red_player in red_team_players %}
-          <div class="drafted-player-container" id="{{ red_player }}">
-            <img
-              class="drafted-player-img"
-              src="../static/img/{{ red_player }}.png"
-              alt=""
-            />
+          <div class="drafted-player-container">
+            <button
+              onclick="show_champs('{{ red_player }}')"
+              class="player-btn"
+            >
+              <img
+                class="drafted-player-img"
+                src="../static/img/{{ red_player }}.png"
+                alt=""
+              />
+            </button>
+            <div id="{{ red_player }}" class="list">
+              {% for cost,champs in red_team[red_player].items() %}
+              <div class="coin-cost-champs">
+                {% for champ in champs %}
+                <label for="{{ red_player }}-{{ champ }}"
+                  ><img
+                    class="hero-img"
+                    src="../static/img/{{ champ }}.png"
+                    alt=""
+                /></label>
+                <input
+                  type="radio"
+                  name="{{ red_player }}-champs"
+                  id="{{ red_player }}-{{ champ }}"
+                  class="radio-hero-group"
+                />
+
+                {% endfor %}
+                <div class="coin-cost">
+                  <h5>{{ cost }}</h5>
+                  <img src="../static/img/coin.png" alt="" />
+                </div>
+              </div>
+              {% endfor %}
+            </div>
           </div>
           {% endfor %}
         </div>

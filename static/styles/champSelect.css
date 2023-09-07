@@ -61,7 +61,7 @@ body {
   border-radius: 20px;
 }
 .drafted-players {
-  gap: 300px;
+  gap: 256px;
   display: flex;
   flex-direction: row;
 }

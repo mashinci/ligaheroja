@@ -41,7 +41,7 @@ heroes = {
     
     "lio": {
         5: ["sett", "sejuani"],
-        4: ["sydra", "missFortune"],
+        4: ["syndra", "missFortune"],
         3: ["varus", "azir"],
         2: ["jinx", "nami"],
         1: ["kalista", "yone"],
