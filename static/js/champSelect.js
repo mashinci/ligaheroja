@@ -1,9 +1,14 @@
 "use strict";
+const big_drafted_players_container = document.querySelector(
+  ".drafted-players-container"
+);
 // BLUE
 const submit_blue_btn = document.querySelector(".submit-blue");
 const submit_red_btn = document.querySelector(".submit-red");
 const submit_draft_btn = document.querySelector(".submit-draft");
 const blue_team_points_display = document.querySelector("#blue-team-points");
+const blue_team_coins_img = document.querySelector(".blue-team-coins");
+const red_team_coins_img = document.querySelector(".red-team-coins");
 let blue_team_points = parseInt(
   document.querySelector("#blue-team-points").textContent
 );
@@ -89,8 +94,17 @@ all_blue_players_champs.forEach((blue_player_champs, playerIndex) => {
         blue_team_points_display.textContent = blue_team_points;
         if (blue_team_points >= 0 && sumArr(blue_player_is_selected) == 5) {
           submit_blue_btn.style.pointerEvents = "auto";
+          submit_blue_btn.style.backgroundColor = "var(--plava)";
         } else {
           submit_blue_btn.style.pointerEvents = "none";
+          submit_blue_btn.style.backgroundColor = "var(--siva)";
+        }
+        if (blue_team_points < 0) {
+          blue_team_points_display.style.color = "var(--crvena)";
+          blue_team_points_display.classList.add("bounce");
+        } else {
+          blue_team_points_display.style.color = "var(--bela)";
+          blue_team_points_display.classList.remove("bounce");
         }
       }
     });
@@ -99,7 +113,50 @@ all_blue_players_champs.forEach((blue_player_champs, playerIndex) => {
 submit_blue_btn.addEventListener("click", () => {
   blue_button_is_clicked = true;
   submit_blue_btn.style.display = "none";
-  drafted_red_team_players_divs.display = "none";
+  blue_team_points_display.style.display = "none";
+  blue_team_coins_img.style.display = "none";
+  let lists = document.querySelectorAll(".list");
+  lists.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transition = "opacity 0.3s ease-in";
+    setTimeout(function () {
+      el.style.display = "none";
+    }, 300);
+  });
+  if (red_button_is_clicked && blue_button_is_clicked) {
+    submit_draft_btn.style.display = "block";
+    big_drafted_players_container.style.gap = "150px";
+  }
+  // Create a new element
+  const lockedOverlay = document.createElement("div");
+
+  // Add a class to the new element
+  lockedOverlay.classList.add("locked-overlay");
+
+  // Set the styles for the new element
+  lockedOverlay.style.position = "absolute";
+  lockedOverlay.style.top = "0";
+  lockedOverlay.style.left = "0";
+  lockedOverlay.style.display = "flex";
+  lockedOverlay.style.justifyContent = "center";
+  lockedOverlay.style.alignItems = "center";
+  lockedOverlay.style.fontSize = "4rem";
+  lockedOverlay.style.letterSpacing = "60px";
+  lockedOverlay.textContent = "LOCKED";
+  lockedOverlay.style.color = "white";
+  lockedOverlay.style.borderRadius = "20px";
+  lockedOverlay.style.fontWeight = "bold";
+  lockedOverlay.style.width = "100%";
+  lockedOverlay.style.height = "100%";
+  lockedOverlay.style.backgroundColor = "var(--crna)";
+  lockedOverlay.style.opacity = "0.8";
+  lockedOverlay.style.zIndex = "999999";
+
+  // Get the "drafted-blue-team" div by its class name
+  const blueTeamDiv = document.querySelector(".drafted-blue-team");
+
+  // Append the new element to the "drafted-blue-team" div
+  blueTeamDiv.appendChild(lockedOverlay);
 });
 ////////////////////////RED
 const drafted_red_team_players_divs = document.querySelectorAll(
@@ -150,28 +207,26 @@ all_red_players_champs.forEach((red_player_champs, playerIndex) => {
         red_team_points_display.textContent = red_team_points;
         if (red_team_points >= 0 && sumArr(red_player_is_selected) == 5) {
           submit_red_btn.style.pointerEvents = "auto";
+          submit_red_btn.style.backgroundColor = "var(--crvena)";
         } else {
           submit_red_btn.style.pointerEvents = "none";
+          submit_red_btn.style.backgroundColor = "var(--siva)";
+        }
+        if (red_team_points < 0) {
+          red_team_points_display.style.color = "var(--crvena)";
+          red_team_points_display.classList.add("bounce");
+        } else {
+          red_team_points_display.style.color = "var(--bela)";
+          red_team_points_display.classList.remove("bounce");
         }
       }
     });
   });
 });
-// Draft Buttons On Click Events
-submit_blue_btn.addEventListener("click", () => {
-  blue_button_is_clicked = true;
-  submit_blue_btn.style.display = "none";
-  let lists = document.querySelectorAll(".list");
-  lists.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transition = "opacity 0.3s ease-in";
-    setTimeout(function () {
-      el.style.display = "none";
-    }, 300);
-  });
-});
 submit_red_btn.addEventListener("click", () => {
   red_button_is_clicked = true;
+  red_team_points_display.style.display = "none";
+  red_team_coins_img.style.display = "none";
   submit_red_btn.style.display = "none";
   let lists = document.querySelectorAll(".list");
   lists.forEach((el) => {
@@ -181,10 +236,40 @@ submit_red_btn.addEventListener("click", () => {
       el.style.display = "none";
     }, 300);
   });
+  if (red_button_is_clicked && blue_button_is_clicked) {
+    submit_draft_btn.style.display = "block";
+    big_drafted_players_container.style.gap = "150px";
+  }
+  // Create a new element
+  const lockedOverlay = document.createElement("div");
+
+  // Add a class to the new element
+  lockedOverlay.classList.add("locked-overlay");
+
+  // Set the styles for the new element
+  lockedOverlay.style.position = "absolute";
+  lockedOverlay.style.top = "0";
+  lockedOverlay.style.left = "0";
+  lockedOverlay.style.display = "flex";
+  lockedOverlay.style.justifyContent = "center";
+  lockedOverlay.style.alignItems = "center";
+  lockedOverlay.style.fontSize = "4rem";
+  lockedOverlay.style.letterSpacing = "60px";
+  lockedOverlay.textContent = "LOCKED";
+  lockedOverlay.style.color = "white";
+  lockedOverlay.style.borderRadius = "20px";
+  lockedOverlay.style.fontWeight = "bold";
+  lockedOverlay.style.width = "100%";
+  lockedOverlay.style.height = "100%";
+  lockedOverlay.style.backgroundColor = "var(--crna)";
+  lockedOverlay.style.opacity = "0.8";
+  lockedOverlay.style.zIndex = "999999";
+
+  const redTeamDiv = document.querySelector(".drafted-red-team");
+
+  redTeamDiv.appendChild(lockedOverlay);
 });
-if (red_button_is_clicked && blue_button_is_clicked) {
-  submit_draft_btn.style.pointerEvents = "auto";
-}
+
 submit_draft_btn.addEventListener("click", () => {
   if (red_button_is_clicked && blue_button_is_clicked) {
     const champ_data = {

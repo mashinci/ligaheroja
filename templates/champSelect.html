@@ -8,14 +8,18 @@
   </head>
   <body>
     <div class="logo-container">
+      <img class="blue-team-coins" src="../static/img/coin.png" alt="" />
+      <div id="blue-team-points" class="team-points">15</div>
       <button class="submit-blue">Submit Blue</button>
-      <button class="submit-draft">Submit Draft</button>
+      <!-- <button class="submit-draft">Submit Draft</button> -->
       <button class="submit-red">Submit Red</button>
+      <div id="red-team-points" class="team-points">15</div>
+      <img class="red-team-coins" src="../static/img/coin.png" alt="" />
       <!-- <a href="/"><h1>Draft Page</h1></a> -->
     </div>
     <div class="drafted-players-container">
       <div class="drafted-blue-team">
-        <div id="blue-team-points" class="team-points">15</div>
+        <!-- <div id="blue-team-points" class="team-points">15</div> -->
         <div class="drafted-players">
           {% for blue_player in blue_team_players %}
           <div class="drafted-player-container">
@@ -59,9 +63,9 @@
           {% endfor %}
         </div>
       </div>
-
+      <button class="submit-draft">Submit Draft</button>
       <div class="drafted-red-team">
-        <div id="red-team-points" class="team-points">15</div>
+        <!-- <div id="red-team-points" class="team-points">15</div> -->
         <div class="drafted-players">
           {% for red_player in red_team_players %}
           <div class="drafted-player-container">

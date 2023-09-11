@@ -6,6 +6,8 @@
   --crvena: #d33445;
   --borda: #553f46;
   --zuta: #d4c381;
+  --siva: #636768;
+  --zelena: #66a93a;
   ::selection {
     color: var(--bela);
     background-color: var(--crna);
@@ -35,14 +37,19 @@
 }
 body {
   font-family: friz, serif;
-  background-image: url(../img/champSelectBg1.png);
+  background-image: url(../img/champSelectBg2.png);
   background-size: cover;
   /* background-position-x: 220px; */
   height: 100vh;
 }
 .logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   text-align: center;
-  padding: 20px;
+  padding: 45px;
 }
 .submit-blue {
   cursor: pointer;
@@ -55,7 +62,8 @@ body {
   outline: none;
   border: none;
   transition: 0.3s all ease;
-  background-color: var(--plava);
+  background-color: var(--siva);
+  color: var(--crna);
   pointer-events: none;
 }
 .submit-red {
@@ -69,7 +77,8 @@ body {
   outline: none;
   border: none;
   transition: 0.3s all ease;
-  background-color: var(--crvena);
+  color: var(--crna);
+  background-color: var(--siva);
   pointer-events: none;
 }
 .submit-draft {
@@ -83,8 +92,10 @@ body {
   outline: none;
   border: none;
   transition: 0.3s all ease;
-  background-color: var(--bela);
+  background-color: var(--zelena);
+  color: var(--bela);
   /* pointer-events: none; */
+  display: none;
 }
 .drafted-players-container {
   /* position: relative; */
@@ -107,17 +118,39 @@ body {
 }
 /* .drafted-blue-team::before {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  letter-spacing: 50px;
+  letter-spacing: 60px;
   content: "LOCKED";
   color: white;
+  border-radius: 20px;
   font-weight: bold;
   width: 100%;
   height: 100%;
-  background-color: #000000;
+  background-color: var(--crna);
+  opacity: 0.8;
+  z-index: 999999;
+}
+.drafted-red-team::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  letter-spacing: 60px;
+  content: "LOCKED";
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  background-color: var(--crna);
   opacity: 0.8;
   z-index: 999999;
 } */
@@ -147,6 +180,7 @@ body {
   font-size: 48px;
   text-align: center;
   margin-right: 20px;
+  color: var(--bela);
 }
 .drafted-player-heroes {
   display: flex;
@@ -186,9 +220,9 @@ body {
   font-size: 2.5rem;
 }
 /* radio buttons */
-/* input[type="radio"] {
+input[type="radio"] {
   display: none;
-} */
+}
 
 /* hero img */
 .hero-img {
@@ -196,12 +230,12 @@ body {
   filter: grayscale();
   opacity: 0.9;
 }
-/* .drafted-player-container { */
-/* ZA KASNIJE */
-/* position: relative; */
-/* width: 150px; */
-/* text-align: center; */
-/* } */
+.drafted-player-container {
+  /* ZA KASNIJE */
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
 .player-btn {
   background-color: transparent;
   border: 0;
@@ -209,8 +243,8 @@ body {
 }
 .drafted-blue-team .list {
   position: absolute;
-  top: 140px;
-  /* right: -70px; */
+  top: 146px;
+  right: -70px;
   display: none;
   background-color: transparent;
   /* -webkit-box-shadow: -7px -4px 69px 11px var(--plava);
@@ -219,10 +253,11 @@ body {
 }
 .drafted-red-team .list {
   position: absolute;
-  bottom: 140px;
-  /* right: 170px; */
+  bottom: 144px;
+  right: -70px;
   display: none;
-  background-color: #d33445;
+  background-color: var(--crvena);
+  color: var(--bela);
   box-shadow: -7px -4px 69px 11px var(--crvena);
 }
 .drafted-blue-team .coin-cost-champs {
@@ -254,4 +289,31 @@ body {
 }
 .coin-cost img {
   max-width: 35px;
+}
+/* Animation Sector */
+#blue-team-points {
+  transition: transform 0.2s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    border-bottom: 0px solid var(--bela);
+  }
+  25% {
+    transform: translateY(-5px);
+    border-bottom: 1px solid var(--bela);
+  }
+  50% {
+    transform: translateY(5px);
+    border-bottom: 2px solid var(--bela);
+  }
+  75% {
+    transform: translateY(-5px);
+    border-bottom: 3px solid var(--bela);
+  }
+}
+.bounce {
+  animation: bounce 0.5s ease-in-out 2;
 }
