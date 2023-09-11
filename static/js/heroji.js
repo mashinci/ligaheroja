@@ -74,7 +74,7 @@ player_container.forEach((container) => {
               },
               body: JSON.stringify(draft_data),
             });
-            const response_data = await res.json();
+            // const response_data = await res.json();
           }
           sendHeroes();
           window.location.href = "/test";

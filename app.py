@@ -26,12 +26,6 @@ def draft_submit():
     return jsonify(team_heroes)
 
 
-@app.route("/champSelect")
-def champ_select():
-    global team_heroes
-    print("\n\n\n\nMoja kara velika\n\n\n\n\n", team_heroes)
-    return render_template('champSelect.html')
-
 @app.route("/test")
 def test():
     global team_heroes
@@ -43,7 +37,14 @@ def test():
 
     return render_template('test.html',blue_team_players = blue_team_players, red_team_players = red_team_players, blue_team = blue_team, red_team = red_team)
 
-
+@app.route("/submitChampionSelect", methods=['POST'])
+def champ_submit():
+    champ_data = request.json
+    print(champ_data)
+    return jsonify(champ_data)
+@app.route("/postGame")
+def champ_select():
+    return render_template('postGame.html')
 if __name__ == '__main__':
     app.run(debug=True)
     

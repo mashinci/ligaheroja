@@ -35,7 +35,7 @@
 }
 body {
   font-family: friz, serif;
-  background-image: url(../img/champSelectBg2.png);
+  background-image: url(../img/champSelectBg1.png);
   background-size: cover;
   /* background-position-x: 220px; */
   height: 100vh;
@@ -43,6 +43,48 @@ body {
 .logo-container {
   text-align: center;
   padding: 20px;
+}
+.submit-blue {
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: frizBold, serif;
+  font-weight: normal;
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  transition: 0.3s all ease;
+  background-color: var(--plava);
+  pointer-events: none;
+}
+.submit-red {
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: frizBold, serif;
+  font-weight: normal;
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  transition: 0.3s all ease;
+  background-color: var(--crvena);
+  pointer-events: none;
+}
+.submit-draft {
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: frizBold, serif;
+  font-weight: normal;
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  transition: 0.3s all ease;
+  background-color: var(--bela);
+  /* pointer-events: none; */
 }
 .drafted-players-container {
   /* position: relative; */
@@ -61,7 +103,24 @@ body {
   align-items: center;
   padding: 15px;
   border-radius: 20px;
+  position: relative;
 }
+/* .drafted-blue-team::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  letter-spacing: 50px;
+  content: "LOCKED";
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+  z-index: 999999;
+} */
 .drafted-players {
   position: relative;
   gap: 203px;
@@ -127,9 +186,9 @@ body {
   font-size: 2.5rem;
 }
 /* radio buttons */
-input[type="radio"] {
-  /* display: none; */
-}
+/* input[type="radio"] {
+  display: none;
+} */
 
 /* hero img */
 .hero-img {
@@ -137,12 +196,12 @@ input[type="radio"] {
   filter: grayscale();
   opacity: 0.9;
 }
-.drafted-player-container {
-  /* ZA KASNIJE */
-  /* position: relative; */
-  /* width: 150px; */
-  /* text-align: center; */
-}
+/* .drafted-player-container { */
+/* ZA KASNIJE */
+/* position: relative; */
+/* width: 150px; */
+/* text-align: center; */
+/* } */
 .player-btn {
   background-color: transparent;
   border: 0;
