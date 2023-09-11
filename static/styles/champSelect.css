@@ -64,7 +64,7 @@ body {
 }
 .drafted-players {
   position: relative;
-  gap: 256px;
+  gap: 203px;
   display: flex;
   flex-direction: row;
 }
@@ -138,7 +138,10 @@ input[type="radio"] {
   opacity: 0.9;
 }
 .drafted-player-container {
+  /* ZA KASNIJE */
   /* position: relative; */
+  /* width: 150px; */
+  /* text-align: center; */
 }
 .player-btn {
   background-color: transparent;
@@ -148,6 +151,7 @@ input[type="radio"] {
 .drafted-blue-team .list {
   position: absolute;
   top: 140px;
+  /* right: -70px; */
   display: none;
   background-color: transparent;
   /* -webkit-box-shadow: -7px -4px 69px 11px var(--plava);
@@ -157,6 +161,7 @@ input[type="radio"] {
 .drafted-red-team .list {
   position: absolute;
   bottom: 140px;
+  /* right: 170px; */
   display: none;
   background-color: #d33445;
   box-shadow: -7px -4px 69px 11px var(--crvena);

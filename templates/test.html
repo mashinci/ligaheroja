@@ -29,7 +29,7 @@
             </button>
             <div id="{{ blue_player }}" class="list">
               {% for cost,champs in blue_team[blue_player].items() %}
-              <div class="coin-cost-champs">
+              <div class="coin-cost-champs {{ blue_player }}-player">
                 {% for champ in champs %}
                 <label for="{{ blue_player }}-{{ champ }}"
                   ><img
@@ -38,9 +38,10 @@
                     alt="../static/img/{{ champ }}.png"
                 /></label>
                 <input
+                  value="{{ cost }}"
+                  id="{{ blue_player }}-{{ champ }}"
                   type="radio"
                   name="{{ blue_player }}-champs"
-                  id="{{ blue_player }}-{{ champ }}"
                   class="radio-hero-group"
                 />
 
@@ -74,7 +75,7 @@
             </button>
             <div id="{{ red_player }}" class="list">
               {% for cost,champs in red_team[red_player].items() %}
-              <div class="coin-cost-champs">
+              <div class="coin-cost-champs {{ red_player }}-player">
                 {% for champ in champs %}
                 <label for="{{ red_player }}-{{ champ }}"
                   ><img
@@ -83,9 +84,10 @@
                     alt=""
                 /></label>
                 <input
+                  value="{{ cost }}"
+                  id="{{ red_player }}-{{ champ }}"
                   type="radio"
                   name="{{ red_player }}-champs"
-                  id="{{ red_player }}-{{ champ }}"
                   class="radio-hero-group"
                 />
 
