@@ -83,7 +83,7 @@ player_container.forEach((container) => {
     }
   });
 });
-audio
+// audio
 player_container.forEach((container) => {
   const audio = container.querySelector(".player-hover");
   container.addEventListener("mouseenter", () => {
