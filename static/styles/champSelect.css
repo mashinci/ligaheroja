@@ -128,7 +128,7 @@ body {
 }
 /* radio buttons */
 input[type="radio"] {
-  display: none;
+  /* display: none; */
 }
 
 /* hero img */

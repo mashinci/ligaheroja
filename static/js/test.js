@@ -1,4 +1,6 @@
 "use strict";
+const coin_cost_champs = document.querySelectorAll(".coin-cost-champs");
+
 // const list = document.querySelector(".list");
 // function show_champs(player) {
 //   var list = document.getElementById(player);
