@@ -66,7 +66,7 @@ player_container.forEach((container) => {
             blue_team: [...blue_team],
             red_team: [...red_team],
           };
-          async function sendHeroes() {
+          async function send_heroes() {
             const res = await fetch("/submitDraftSelect", {
               method: "POST",
               headers: {
@@ -76,8 +76,8 @@ player_container.forEach((container) => {
             });
             // const response_data = await res.json();
           }
-          sendHeroes();
-          window.location.href = "/test";
+          send_heroes();
+          window.location.href = "/champSelect";
         });
       }
     }

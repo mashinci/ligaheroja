@@ -4,244 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/styles/champSelect.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nothing+You+Could+Do&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
+    <title>TEST</title>
   </head>
   <body>
     <div class="logo-container">
-      <img src="../static/img/logo.png" alt="" />
+      <button class="submit-blue">Submit Blue</button>
+      <button class="submit-draft">Submit Draft</button>
+      <button class="submit-red">Submit Red</button>
       <!-- <a href="/"><h1>Draft Page</h1></a> -->
     </div>
-
     <div class="drafted-players-container">
-      <!-- TEMPLATE START HEROES -->
-      <form class="form-draft" action="#" method="get">
-        <div class="drafted-player-heroes">
-          <!-- COST 3 - 4 -->
-          <div class="three-four-coins">
-            <div class="pay-to-take-heroes">
-              <div class="drafted-heroes-img-container">
-                <label for="zed"
-                  ><img class="hero-img" src="../static/img/zed.png" alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="zed"
-                  class="radio-hero-group"
-                />
-                <label for="renataGlasc"
-                  ><img
-                    class="hero-img"
-                    src="../static/img/renataGlasc.png"
-                    alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="renataGlasc"
-                  class="radio-hero-group"
-                />
-              </div>
-              <div class="heroes-cost">
-                <img src="../static/img/coin.png" alt="" />
-                <h3 id="hero-coin">3</h3>
-              </div>
-            </div>
-            <div class="pay-to-take-heroes">
-              <div class="drafted-heroes-img-container">
-                <label for="zoe"
-                  ><img class="hero-img" src="../static/img/zoe.png" alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="zoe"
-                  class="radio-hero-group"
-                />
-                <label for="zilean"
-                  ><img class="hero-img" src="../static/img/zilean.png" alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="zilean"
-                  class="radio-hero-group"
-                />
-              </div>
-              <div class="heroes-cost">
-                <img src="../static/img/coin.png" alt="" />
-                <h3 id="hero-coin">4</h3>
-              </div>
-            </div>
-          </div>
-          <!-- COST 5 -->
-          <div class="five-coins">
-            <div class="pay-to-take-heroes">
-              <div class="drafted-heroes-img-container">
-                <label for="twistedFate"
-                  ><img
-                    class="hero-img"
-                    src="../static/img/twistedFate.png"
-                    alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="twistedFate"
-                  class="radio-hero-group"
-                />
-                <label for="tahmKench"
-                  ><img
-                    class="hero-img"
-                    src="../static/img/tahmKench.png"
-                    alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="tahmKench"
-                  class="radio-hero-group"
-                />
-              </div>
-              <div class="heroes-cost">
-                <img src="../static/img/coin.png" alt="" />
-                <h3 id="hero-coin">5</h3>
-              </div>
-            </div>
-          </div>
-          <!-- COST 1 OR 2 -->
-          <div class="one-two-coins">
-            <div class="pay-to-take-heroes">
-              <div class="drafted-heroes-img-container">
-                <label for="riven"
-                  ><img class="hero-img" src="../static/img/riven.png" alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="riven"
-                  class="radio-hero-group"
-                />
-                <label for="blitzCrank"
-                  ><img
-                    class="hero-img"
-                    src="../static/img/blitzCrank.png"
-                    alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="blitzCrank"
-                  class="radio-hero-group"
-                />
-              </div>
-              <div class="heroes-cost">
-                <img src="../static/img/coin.png" alt="" />
-                <h3 id="hero-coin">2</h3>
-              </div>
-            </div>
-            <div class="pay-to-take-heroes">
-              <div class="drafted-heroes-img-container">
-                <label for="akali"
-                  ><img class="hero-img" src="../static/img/akali.png" alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="akali"
-                  class="radio-hero-group"
-                />
-                <label for="senna"
-                  ><img class="hero-img" src="../static/img/senna.png" alt=""
-                /></label>
-                <input
-                  type="radio"
-                  name="player-pay-radio"
-                  id="senna"
-                  class="radio-hero-group"
-                />
-              </div>
-              <div class="heroes-cost">
-                <img src="../static/img/coin.png" alt="" />
-                <h3 id="hero-coin">1</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- TEMPLATE END HEROES -->
       <div class="drafted-blue-team">
         <div id="blue-team-points" class="team-points">15</div>
-        <div class="drafted-blue-players">
+        <div class="drafted-players">
+          {% for blue_player in blue_team_players %}
           <div class="drafted-player-container">
-            <img
-              class="drafted-player-img"
-              src="../static/img/mein.png"
-              alt=""
-            />
+            <button
+              onclick="show_champs('{{ blue_player }}')"
+              class="player-btn"
+            >
+              <img
+                class="drafted-player-img"
+                src="../static/img/{{ blue_player }}.png"
+                alt=""
+              />
+            </button>
+            <div id="{{ blue_player }}" class="list">
+              {% for cost,champs in blue_team[blue_player].items() %}
+              <div class="coin-cost-champs {{ blue_player }}-player">
+                {% for champ in champs %}
+                <label for="{{ blue_player }}-{{ champ }}"
+                  ><img
+                    class="hero-img"
+                    src="../static/img/{{ champ }}.png"
+                    alt="../static/img/{{ champ }}.png"
+                /></label>
+                <input
+                  value="{{ cost }}"
+                  id="{{ blue_player }}-{{ champ }}"
+                  type="radio"
+                  name="{{ blue_player }}-champs"
+                  class="radio-hero-group"
+                />
+
+                {% endfor %}
+                <div class="coin-cost">
+                  <h5>{{ cost }}</h5>
+                  <img src="../static/img/coin.png" alt="" />
+                </div>
+              </div>
+              {% endfor %}
+            </div>
           </div>
-          <div class="drafted-player-container">
-            <img
-              class="drafted-player-img"
-              src="../static/img/player.png"
-              alt=""
-            />
-          </div>
-          <div class="drafted-player-container">
-            <img
-              class="drafted-player-img"
-              src="../static/img/player.png"
-              alt=""
-            />
-          </div>
-          <div class="drafted-player-container">
-            <img
-              class="drafted-player-img"
-              src="../static/img/player.png"
-              alt=""
-            />
-          </div>
-          <div class="drafted-player-container">
-            <img
-              class="drafted-player-img"
-              src="../static/img/player.png"
-              alt=""
-            />
-          </div>
+          {% endfor %}
         </div>
       </div>
+
       <div class="drafted-red-team">
         <div id="red-team-points" class="team-points">15</div>
-        <div class="drafted-red-players">
-          <img
-            class="drafted-player-img"
-            src="../static/img/player.png"
-            alt=""
-          />
-          <img
-            class="drafted-player-img"
-            src="../static/img/player.png"
-            alt=""
-          />
-          <img
-            class="drafted-player-img"
-            src="../static/img/player.png"
-            alt=""
-          />
-          <img
-            class="drafted-player-img"
-            src="../static/img/player.png"
-            alt=""
-          />
-          <img
-            class="drafted-player-img"
-            src="../static/img/player.png"
-            alt=""
-          />
+        <div class="drafted-players">
+          {% for red_player in red_team_players %}
+          <div class="drafted-player-container">
+            <button
+              onclick="show_champs('{{ red_player }}')"
+              class="player-btn"
+            >
+              <img
+                class="drafted-player-img"
+                src="../static/img/{{ red_player }}.png"
+                alt=""
+              />
+            </button>
+            <div id="{{ red_player }}" class="list">
+              {% for cost,champs in red_team[red_player].items() %}
+              <div class="coin-cost-champs {{ red_player }}-player">
+                {% for champ in champs %}
+                <label for="{{ red_player }}-{{ champ }}"
+                  ><img
+                    class="hero-img"
+                    src="../static/img/{{ champ }}.png"
+                    alt=""
+                /></label>
+                <input
+                  value="{{ cost }}"
+                  id="{{ red_player }}-{{ champ }}"
+                  type="radio"
+                  name="{{ red_player }}-champs"
+                  class="radio-hero-group"
+                />
+
+                {% endfor %}
+                <div class="coin-cost">
+                  <h5>{{ cost }}</h5>
+                  <img src="../static/img/coin.png" alt="" />
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
