@@ -84,13 +84,13 @@ player_container.forEach((container) => {
   });
 });
 // audio
-// player_container.forEach((container) => {
-//   const audio = container.querySelector(".player-hover");
-//   container.addEventListener("mouseenter", () => {
-//     audio.currentTime = 0;
-//     audio.play();
-//   });
-//   container.addEventListener("mouseleave", () => {
-//     audio.pause();
-//   });
-// });
+player_container.forEach((container) => {
+  const audio = container.querySelector(".player-hover");
+  container.addEventListener("mouseenter", () => {
+    audio.currentTime = 0;
+    audio.play();
+  });
+  container.addEventListener("mouseleave", () => {
+    audio.pause();
+  });
+});
