@@ -1,0 +1,149 @@
+:root {
+  --bela: #ffffff;
+  --crna: #000000;
+  --plava: #0093e9;
+  --crvena: #d33445;
+  --borda: #553f46;
+  --zuta: #d4c381;
+  --siva: #636768;
+  --zelena: #66a93a;
+  ::selection {
+    color: var(--bela);
+    background-color: var(--crna);
+  }
+}
+/* fontovi */
+@font-face {
+  font-family: friz;
+  src: url(../fonts/frizMedium.otf);
+}
+@font-face {
+  font-family: frizBold;
+  src: url(../fonts/frizBold.otf);
+}
+@font-face {
+  font-family: frizBoldItalic;
+  src: url(../fonts/frizBoldItalic.otf);
+}
+@font-face {
+  font-family: frizItalic;
+  src: url(../fonts/frizItalic.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: friz, serif;
+  background-image: url(../img/champSelectBg1.png);
+  background-size: cover;
+  /* background-position-x: 220px; */
+  height: 100vh;
+}
+.post-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.short-info-labels {
+  padding-left: 172px;
+  display: flex;
+  flex-direction: row;
+  gap: 51px;
+}
+.long-info-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 85px;
+  padding-right: 68px;
+}
+.post-info-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+img {
+  border-radius: 50%;
+  height: 65px;
+}
+.post-game-blue,
+.post-game-red {
+  padding: 35px;
+}
+.post-game-blue {
+  background-color: var(--plava);
+  border-radius: 20px;
+}
+.post-game-player {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.number-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.display-number {
+  display: none;
+  position: absolute;
+  top: -80px; /* Adjust this value to position the value display properly */
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.post-game-red {
+  background-color: var(--crvena);
+  border-radius: 20px;
+}
+/* INPUTS */
+input[type="number"] {
+  font-family: frizBold;
+  font-size: 28px;
+  width: 50px;
+  height: 55px;
+  text-align: center;
+}
+input[type="range"] {
+  width: 250px;
+}
+/* buttons */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+.btn-blue-won {
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: frizBold, serif;
+  font-weight: normal;
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  transition: 0.3s all ease;
+  background-color: var(--plava);
+  color: var(--crna);
+}
+.btn-red-won {
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: frizBold, serif;
+  font-weight: normal;
+  font-size: 36px;
+  letter-spacing: 2.5px;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  transition: 0.3s all ease;
+  background-color: var(--crvena);
+  color: var(--crna);
+}

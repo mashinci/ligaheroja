@@ -3,20 +3,176 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/postGame.css" />
     <title>Document</title>
   </head>
   <body>
-    fak jes
-    <ul>
-    {% for hero, champ in thc['blue_team'].items() %}
-      <li>{{ hero }} --- {{ champ }}</li>
-    {% endfor %}
-    </ul>
-    VS
-    <ul>
-      {% for hero, champ in thc['red_team'].items() %}
-        <li>{{ hero }} --- {{ champ }}</li>
-      {% endfor %}
-      </ul>
+    <div class="post-game-container">
+      <div class="post-game-blue">
+        <div class="post-info-labels">
+          <div class="short-info-labels">
+            <h3>K</h3>
+            <h3>D</h3>
+            <h3>A</h3>
+            <h3>CS</h3>
+            <h3>VS</h3>
+          </div>
+          <div class="long-info-labels">
+            <h3>DAMAGE DEALT</h3>
+            <h3>DAMAGE TAKEN</h3>
+            <h3>SELF MITIGATED DAMAGE</h3>
+            <h3>TURRET DAMAGE</h3>
+          </div>
+        </div>
+        <ul>
+          {% for hero, champ in thc['blue_team'].items() %}
+          <li class="post-game-player">
+            <img src="../static/img/{{ hero }}.png" alt="" />
+            <img src="../static/img/{{ champ }}.png" alt="" />
+            <input min="0" max="99" class="k-d-a" type="number" name="" id="" />
+            <input min="0" max="99" class="k-d-a" type="number" name="" id="" />
+            <input min="0" max="99" class="k-d-a" type="number" name="" id="" />
+            <input class="cs" type="number" name="" id="" />
+            <input class="vs" type="number" name="" id="" />
+            <div class="number-input-container">
+              <h2 id="display-dmg-dealt">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="dmg-dealt"
+              />
+            </div>
+            <div class="number-input-container">
+              <h2 id="display-dmg-taken">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="dmg-taken"
+              />
+            </div>
+            <div class="number-input-container">
+              <h2 id="display-self-mitigated-dmg">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="self-mitigated-dmg"
+              />
+            </div>
+            <div class="number-input-container">
+              <h2 id="display-turret-dmg">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="turret-dmg"
+              />
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="buttons">
+        <button class="btn-blue-won">Blue Won</button>
+        <div class="game-length">
+          <input min="0" max="90" type="number" />
+          <input min="0" max="59" type="number" />
+        </div>
+        <button class="btn-red-won">Red Won</button>
+      </div>
+      <div class="post-game-red">
+        <div class="post-info-labels">
+          <div class="short-info-labels">
+            <h3>K</h3>
+            <h3>D</h3>
+            <h3>A</h3>
+            <h3>CS</h3>
+            <h3>VS</h3>
+          </div>
+          <div class="long-info-labels">
+            <h3>DAMAGE DEALT</h3>
+            <h3>DAMAGE TAKEN</h3>
+            <h3>SELF MITIGATED DAMAGE</h3>
+            <h3>TURRET DAMAGE</h3>
+          </div>
+        </div>
+        <ul>
+          {% for hero, champ in thc['red_team'].items() %}
+          <li class="post-game-player">
+            <img src="../static/img/{{ hero }}.png" alt="" />
+            <img src="../static/img/{{ champ }}.png" alt="" />
+            <input min="0" max="99" class="k-d-a" type="number" name="" id="" />
+            <input min="0" max="99" class="k-d-a" type="number" name="" id="" />
+            <input min="0" max="99" class="k-d-a" type="number" name="" id="" />
+            <input class="cs" type="number" name="" id="" />
+            <input class="vs" type="number" name="" id="" />
+            <div class="number-input-container">
+              <h2 id="display-dmg-dealt">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="dmg-dealt"
+              />
+            </div>
+            <div class="number-input-container">
+              <h2 id="display-dmg-taken">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="dmg-taken"
+              />
+            </div>
+            <div class="number-input-container">
+              <h2 id="display-self-mitigated-dmg">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="self-mitigated-dmg"
+              />
+            </div>
+            <div class="number-input-container">
+              <h2 id="display-turret-dmg">?</h2>
+              <input
+                step="500"
+                min="0"
+                max="200000"
+                class="dmg-range"
+                type="range"
+                name=""
+                id="turret-dmg"
+              />
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <script src="../static/js/postGame.js"></script>
   </body>
 </html>
