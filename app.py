@@ -52,8 +52,6 @@ def champ_submit():
         'red_team': {pair.split('-')[0]: pair.split('-')[1] for pair in red_team_heroes_champions}
     }
     
-    print(team_heroes_champions)
-    
     return jsonify(team_heroes_champions)
 
 @app.route("/postGame")
