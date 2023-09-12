@@ -7,5 +7,16 @@
   </head>
   <body>
     fak jes
+    <ul>
+    {% for hero, champ in thc['blue_team'].items() %}
+      <li>{{ hero }} --- {{ champ }}</li>
+    {% endfor %}
+    </ul>
+    VS
+    <ul>
+      {% for hero, champ in thc['red_team'].items() %}
+        <li>{{ hero }} --- {{ champ }}</li>
+      {% endfor %}
+      </ul>
   </body>
 </html>
