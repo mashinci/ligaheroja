@@ -59,6 +59,7 @@ def champ_submit():
 @app.route("/postGame")
 def champ_select():
     global team_heroes_champions
+    
     return render_template('postGame.html', thc=team_heroes_champions)
 if __name__ == '__main__':
     app.run(debug=True)
